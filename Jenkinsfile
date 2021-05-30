@@ -28,5 +28,10 @@ pipeline {
                 echo 'Release'
             }
         }
+        stage('GitHUb to Jenkins') {
+            steps {
+                echo 'GitHUb to Jenkins'
+            }
+        }
     }
 }
