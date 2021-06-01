@@ -8,7 +8,7 @@ stages {
 
      steps {
        
-       sh 'mvn clean install'
+      sh 'echo "Hello World"'
 
         
 
