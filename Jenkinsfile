@@ -1,37 +1,15 @@
-
 pipeline {
-    agent any
 
-    stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-        stage('Build') {
-            steps {
-                echo 'build'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploy'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Test'
-            }
-        }
-        stage('Release') {
-            steps {
-                echo 'Release'
-            }
-        }
-        stage('GitHUb to Jenkins') {
-            steps {
-                echo 'GitHUb to Jenkins'
-            }
-        }
-    }
-}
+agent { label ' Linux01'}
+
+stages {
+
+  stage('Hello') {
+
+     steps {
+
+        sh """curl -u admin:admin -F package=@"ui.apps/target/mysite.ui.apps-1.0.0-SNAPSHOT.zip" http://localhost:4502/crx/packmgr/service/.json/?cmd=upload"""
+
+     }
+  }
+} }
