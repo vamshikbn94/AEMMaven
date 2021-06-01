@@ -4,7 +4,7 @@ agent any
 
 stages {
 
-  stage('Hello') {
+  stage('Upload') {
 
      steps {
 
